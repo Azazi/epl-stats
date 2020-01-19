@@ -7,10 +7,15 @@ from data_processor import (
 from data_presenter import print_standings_for
 from data_retriever import get_season_data
 
+# Constants START_YEAR & END_YEAR refer to the earlies
+# and latest season years (at the time).
+# EXCLUDED is an array of years during which the EPL was
+# suspended.
 START_YEAR = 1888
 END_YEAR = 2020
 EXCLUDED = [1915, 1916, 1917, 1918, 1939, 1940, 1941, 1942, 1943, 1944, 1945]
 
+# A dictionary to store the data for each EPL team.
 TEAMS = {}
 
 
@@ -19,7 +24,7 @@ def process_season(start_year):
     raw_data = get_season_data(start_year, start_year + 1)
     standings_table = get_standings_table(raw_data)
 
-    # iterate through the table.
+    # Iterate through the table.
     for item in standings_table:
         team_name = get_team_name(item)
         TEAMS.setdefault(team_name, {})
