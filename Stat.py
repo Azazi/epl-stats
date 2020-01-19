@@ -1,0 +1,13 @@
+from enum import Enum
+
+
+class Stat(Enum):
+    PLAYED = 'PLAYED'
+    WON = 'WON'
+    DRAW = 'DRAW'
+    LOST = 'LOST'
+    GOALS_FOR = 'GOALS FOR'
+    GOALS_AGAINST = 'GOALS AGAINST'
+    GOAL_DIFF = 'GOAL DIFFERENCE'
+    POINTS = 'POINTS'
+    POINTS_ADJUSTED = 'POINTS ADJUSTED'
