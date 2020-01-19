@@ -46,11 +46,13 @@ def _get_team_points_adjusted(row):
 def get_standings_table(raw_data):
     soup_data = BeautifulSoup(raw_data, 'html.parser')
 
-    # Get final table.
+    # Get standings table.
     raw_table = soup_data.find_all(
         'table',
         attrs={'class': 'standard_tabelle'}
     )[1]
+    
+    # Extract the data rows from the raw table.
     return raw_table.find_all('tr')[1:]
 
 
