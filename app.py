@@ -4,6 +4,7 @@ from data_processor import (
     get_team_name,
     get_standings_table
 )
+from teams import FORMER_TEAM_NAME_MAP
 from data_presenter import print_standings_for
 from data_retriever import get_season_data
 
@@ -26,7 +27,7 @@ def process_season(start_year):
 
     # Iterate through the table.
     for item in standings_table:
-        team_name = get_team_name(item)
+        team_name = FORMER_TEAM_NAME_MAP[get_team_name(item)]
         TEAMS.setdefault(team_name, {})
 
         for key in STAT_PROCESSOR_MAP:
